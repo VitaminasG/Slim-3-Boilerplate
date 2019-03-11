@@ -3,7 +3,6 @@
 // Slim Settings
 
 return[
-
 	'settings' => [
 		'displayErrorDetails' => true, // Set to false in production
 		'addContentLengthHeader' => false, // Allow the web server to send the content-length header
@@ -19,10 +18,11 @@ return[
 		],
 
 		'view' => [
-			'layout_path' => '../views/',
+			'template_path' => 'templates',
 			'twig' => [
 				'cache' => 'cache/twig',
 				'debug' => true,
+				'auto_reload' => true,
 			]
 		]
 

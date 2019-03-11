@@ -2,4 +2,4 @@
 
 // Routes
 
-$app->get('/', 'Main\MainController:index')->setName('message');
+$app->get('/', Main\MainController::class . ':index')->setName('message');

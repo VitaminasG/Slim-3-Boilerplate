@@ -3,6 +3,7 @@
 
 #SLIM
 
-/vendor/
+vendor
+cache
 /logs/*
 !/logs/README.md

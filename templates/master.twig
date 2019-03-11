@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}{% endblock %} &ndash;</title>
+    <title>{% block title %}{% endblock %}</title>
 
     {# Bulma Style sheet #}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
@@ -22,7 +22,11 @@
 
     <div id="app" class="container is-fluid flex-block">
 
-        {% block content %}{% endblock %}
+        <div class="flex-center">
+
+            {% block content %}{% endblock %}
+
+        </div>
 
     </div>
 

@@ -42,7 +42,7 @@ $container['logger'] = function ($c){
 
 $container['view'] = function ($c){
 
-	$view = new Slim\Views\Twig($c['settings']['view']['layout_path'], $c['settings']['view']['twig']);
+	$view = new Slim\Views\Twig($c['settings']['view']['template_path'], $c['settings']['view']['twig']);
 
 	//Extensions
 	$view->addExtension(new Slim\Views\TwigExtension($c['router'], $c['request']->getUri()));
@@ -67,11 +67,11 @@ $container['flash'] = function ($c) {
 /**
  * @param object $c Add Controller to SlimFramework DIC
  *
- * @return MainController
+ * @return Main\MainController
  */
 
-$container[MainController::class] = function ($c){
+$container[Main\MainController::class] = function ($c){
 
-	return new MainController($c['view'], $c['router'], $c['flash']);
+	return new Main\MainController($c['view'], $c['router'], $c['flash']);
 
 };

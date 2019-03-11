@@ -1,15 +1,10 @@
 <?php
 
-
 namespace Main;
 
 use Slim\Views\Twig;
 use Slim\Router;
 use Slim\Flash\Messages;
-//use \Psr\Http\Message\ServerRequestInterface as Request;
-//use \Psr\Http\Message\ResponseInterface as Response;
-
-
 
 final class MainController {
 
@@ -17,7 +12,7 @@ final class MainController {
 	private $router;
 	private $flash;
 
-	public function __constructor(Twig $view, Router $router, Messages $flash){
+	public function __construct(Twig $view, Router $router, Messages $flash){
 
 		$this->view = $view;
 		$this->router = $router;
@@ -29,7 +24,7 @@ final class MainController {
 
 		$message = 'What now?';
 
-		return $this->view->render($response, 'extended/index.twig', [
+		return $this->view->render($response, 'views/index.twig', [
 			'text' => $message
 		]);
 
