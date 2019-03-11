@@ -66,6 +66,18 @@ $container['flash'] = function ($c) {
 };
 
 /**
+ * @param object $c Add CSRF Guard to SlimFramework DIC
+ *
+ * @return object $csrf
+ */
+
+$container['csrf'] = function ($c) {
+
+	return new Slim\Csrf\Guard;
+
+};
+
+/**
  * @param object $c Add Controller to SlimFramework DIC
  *
  * @return Main\MainController
