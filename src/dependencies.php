@@ -27,8 +27,9 @@ $container['capsule'] = function ($c){
 
 $container['logger'] = function ($c){
 
-	$logger = new Monolog\Logger('default_logger');
-	$file_handler = new Monolog\Handler\StreamHandler('../logs/app.log');
+	$logger = new Monolog\Logger($c['settings']['logger']['name']);
+	$logger->pushProcessor(new Monolog\Processor\UidProcessor());
+	$file_handler = new Monolog\Handler\StreamHandler($c['settings']['logger']['path'], Monolog\Logger::DEBUG);
 	$logger->pushHandler($file_handler);
 
 	return $logger;
@@ -72,6 +73,6 @@ $container['flash'] = function ($c) {
 
 $container[Main\MainController::class] = function ($c){
 
-	return new Main\MainController($c['view'], $c['router'], $c['flash']);
+	return new Main\MainController($c['view'], $c['router'], $c['flash'], $c['logger']);
 
 };

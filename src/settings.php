@@ -24,6 +24,11 @@ return[
 				'debug' => true,
 				'auto_reload' => true,
 			]
+		],
+
+		'logger' => [
+			'name' => 'default_logger',
+			'path' => 'log/app.log'
 		]
 
 	]

@@ -5,5 +5,4 @@
 
 vendor
 cache
-/logs/*
-!/logs/README.md
+/log/*
