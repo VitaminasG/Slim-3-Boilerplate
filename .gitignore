@@ -1,0 +1,8 @@
+#PHPStorm
+/.idea
+
+#SLIM
+
+/vendor/
+/logs/*
+!/logs/README.md
